@@ -1,3 +1,3 @@
-export function moneyFormater(money){
-    return money.toLocalString();
+export function moneyFormater(money) {
+  return Number(money).toLocaleString();
 }
