@@ -22,7 +22,17 @@ const CardItem=({
             ])
         }
     }
-    const removeItem=()=>{}
+    const removeItem=()=>{
+        const currentBasket=basket.find((item)=>item.id===product.id);
+        const basketWithoutCurrent= basket.filter((item)=>item.id!==product.id);
+        currentBasket.amount=currentBasket.amount-1;
+        if(currentBasket.amount===0){
+            setBasket([...basketWithoutCurrent])
+        }
+        else{
+            setBasket([...basketWithoutCurrent,currentBasket])
+        }
+    }
     return(
         <div className="cart_item">
             <img src={product.image} alt={product.title} />
