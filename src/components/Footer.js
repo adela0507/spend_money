@@ -23,7 +23,7 @@ const Footer=({basket,total,setBasket})=>{
             </div>
             <div className="button-container">
                 <span>total:${moneyFormater(total)}</span>
-                <button>Reset</button>
+                <button onChange={resetBasket}>Reset</button>
             </div>
         </div>
     )
